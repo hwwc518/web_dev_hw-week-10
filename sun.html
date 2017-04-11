@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Moving Sun</title>
+    <!--    Javascript-->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {});
+        var clicked = false;
+
+        function rotateSun() {
+            clicked = !clicked;
+            //            var clicked = true;
+            if (clicked) {
+                // var div = document.getElementById('container');
+                var sun_img = document.getElementById("image");
+
+
+                // sun_img.setAttribute("class","rotated_sun");
+                //                div.addEventListener('click', function(){
+                //                  if(clicked){
+                //                    icon.className = 'sun';  
+                //                    } else{
+                //                      icon.className = 'sun rotate';
+                //                    }
+                //
+                //                });
+                sun_img.className += "rotated_sun";
+
+            }
+            clicked = clicked;
+        };
+
+    </script>
+    <!--    CSS-->
+    <style type="text/css">
+        /*
+      .sun{
+        transform: rotate(0deg);
+        transition: transform 1s linear;
+      }
+*/
+        
+        .rotated_sun {
+            /*transform: rotate(180deg);
+        transition: transform 1s linear;*/
+            animation: spin 1.5s linear;
+            animation-name: sun-rotate;
+        }
+        
+        @keyframes sun-rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(720deg);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <img id="image" src="sunny.png">
+    </div>
+    <h1> Click to rotate the sun!</h1>
+    <button id="Rotate_Sun" onclick="rotateSun()">Here comes the wind!</button>
+    <!--    <div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
+</body>
+
+</html>
